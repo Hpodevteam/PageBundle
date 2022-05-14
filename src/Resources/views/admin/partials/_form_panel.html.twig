@@ -1,0 +1,17 @@
+{% if form.vars.ea_crud_form.form_panels[panel_index] is defined %}
+    <div class="field-form_panel">
+        <div class="content-panel">
+            <div class="content-panel-header">
+                {{ form.vars.ea_crud_form.form_panels[panel_index].label }}
+            </div>
+
+            <div id="content-{{ panel_index }}" class="content-panel-body with-background  without-footer  show">
+                {% for field in form.children %}
+                    {% if field.vars.ea_crud_form.form_panel == panel_index %}
+                        {{ form_row(field) }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

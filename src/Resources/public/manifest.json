@@ -1,0 +1,4 @@
+{
+  "bundles/page-bundle/app.js": "/build/app.js",
+  "bundles/page-bundle/appStyles.css": "/build/appStyles.css"
+}

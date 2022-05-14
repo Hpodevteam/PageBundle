@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Hippocampe\Bundle\PageBundle\Controller\Admin\:
+    resource: '../../Controller/Admin/*'
+    tags: [ 'controller.service_arguments' ]
+
+  Hippocampe\Bundle\PageBundle\Repository\:
+    resource: '../../Repository/*'
+    tags: [ 'doctrine.repository_service' ]
