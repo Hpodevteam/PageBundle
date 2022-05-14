@@ -44,6 +44,9 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
         $entityInstance->setEntityId($this->getContext()->getRequest()->get('entityId'));
 
         parent::persistEntity($entityManager, $entityInstance);
+
+        $entityManager->persist($entityInstance);
+        $entityManager->flush();
     }
 
 
