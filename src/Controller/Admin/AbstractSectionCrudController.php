@@ -2,13 +2,11 @@
 
 namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 
-use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\HiddenField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -37,8 +35,6 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             IdField::new('id', 'ID')->hideOnForm(),
             TextField::new('title', 'Titre'),
             BooleanField::new('sticky', 'Sticky'),
-            HiddenField::new('entityId', 'entityId')
-                ->setValue($this->getContext()->getRequest()->get('entityId'))
         ];
     }
 
