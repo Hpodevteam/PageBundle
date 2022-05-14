@@ -10,11 +10,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class PageBundle extends Bundle
 {
-    public function getPath(): string
-    {
-        return \dirname(__DIR__);
-    }
-
     public function getContainerExtension(): PageBundleExtension
     {
         return new PageBundleExtension();
