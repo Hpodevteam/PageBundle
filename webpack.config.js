@@ -3,7 +3,7 @@ const Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('./src/Resources/public/')
     .setPublicPath('/build')
-    .setManifestKeyPrefix('bundles/page-bundle')
+    .setManifestKeyPrefix('bundles/page')
 
     .cleanupOutputBeforeBuild()
     .enableSassLoader()
