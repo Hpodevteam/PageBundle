@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\HiddenField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -36,19 +37,10 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             IdField::new('id', 'ID')->hideOnForm(),
             TextField::new('title', 'Titre'),
             BooleanField::new('sticky', 'Sticky'),
+            HiddenField::new('entityId', 'entityId')
+                ->setValue($this->getContext()->getRequest()->get('entityId'))
         ];
     }
-
-    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
-    {
-        $entityInstance->setEntityId($this->getContext()->getRequest()->get('entityId'));
-
-        parent::persistEntity($entityManager, $entityInstance);
-
-        $entityManager->persist($entityInstance);
-        $entityManager->flush();
-    }
-
 
     public function getRedirectResponseAfterSave(AdminContext $context, string $action): RedirectResponse
     {
