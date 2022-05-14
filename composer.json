@@ -1,5 +1,5 @@
 {
-    "name": "hippocampe/page-bundle",
+    "name": "hpodevteam/page-bundle",
     "type": "library",
     "autoload": {
         "psr-4": {
