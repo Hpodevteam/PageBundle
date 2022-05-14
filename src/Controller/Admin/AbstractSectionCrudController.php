@@ -2,6 +2,7 @@
 
 namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
@@ -36,6 +37,13 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             TextField::new('title', 'Titre'),
             BooleanField::new('sticky', 'Sticky'),
         ];
+    }
+
+    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        $entityInstance->setEntityId($this->getContext()->getRequest()->get('entityId'));
+
+        parent::persistEntity($entityManager, $entityInstance);
     }
 
 

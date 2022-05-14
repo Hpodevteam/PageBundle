@@ -67,9 +67,9 @@ abstract class Section
 
     /**
      * @Gedmo\SortableGroup
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private string $entity;
+    private string $entityId;
 
     public function __toString(): string
     {
