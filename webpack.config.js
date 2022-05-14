@@ -12,6 +12,7 @@ Encore
     .disableSingleRuntimeChunk()
 
     .addEntry('app', './assets/js/app.js')
+    .addEntry('admin', './assets/js/admin.js')
     .addStyleEntry('appStyles', './assets/css/app.scss')
 
     .autoProvidejQuery()

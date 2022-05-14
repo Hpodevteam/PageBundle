@@ -1,0 +1,10 @@
+{% extends '@!EasyAdmin/crud/new.html.twig' %}
+
+{% block new_form %}
+    {{ parent() }}
+{% endblock new_form %}
+
+{% block configured_javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/page/app.js') }}"></script>
+{% endblock %}

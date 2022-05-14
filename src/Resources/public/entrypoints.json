@@ -5,6 +5,11 @@
         "/build/app.js"
       ]
     },
+    "admin": {
+      "js": [
+        "/build/admin.js"
+      ]
+    },
     "appStyles": {
       "css": [
         "/build/appStyles.css"

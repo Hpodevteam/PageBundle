@@ -1,4 +1,5 @@
 {
   "bundles/page-bundle/app.js": "/build/app.js",
+  "bundles/page-bundle/admin.js": "/build/admin.js",
   "bundles/page-bundle/appStyles.css": "/build/appStyles.css"
 }

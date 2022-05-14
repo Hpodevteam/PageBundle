@@ -16,3 +16,5 @@ twig:
         '%kernel.project_dir%/vendor/hippocampe/page-bundle/src/Resources/views': Page
 ```
 
+## Usage
+
