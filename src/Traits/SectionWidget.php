@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 trait SectionWidget
 {
     /**
+     * @ORM\OrderBy({"position" = "ASC"})
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Section", cascade={"persist", "remove"})
      * @ORM\JoinTable(name="section_widget",
      *      joinColumns={@ORM\JoinColumn(name="entity_id", referencedColumnName="id")},
