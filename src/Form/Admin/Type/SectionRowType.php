@@ -18,8 +18,6 @@ class SectionRowType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $entity = $options['entity'];
-
         $builder
             ->add('position', HiddenType::class, [
                 'required' => false,
@@ -58,7 +56,6 @@ class SectionRowType extends AbstractType
 
                 return null;
             },
-            'entity' => null,
         ));
     }
 }

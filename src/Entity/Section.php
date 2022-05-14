@@ -4,6 +4,7 @@ namespace Hippocampe\Bundle\PageBundle\Entity;
 
 use App\Entity\Page;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Hippocampe\Bundle\PageBundle\Traits\SectionWidget;
 
 /**
@@ -54,6 +55,7 @@ abstract class Section
     private $slug;
 
     /**
+     * @Gedmo\SortablePosition
      * @ORM\Column(type="integer", nullable=true)
      */
     private $position;
@@ -62,6 +64,12 @@ abstract class Section
      * @ORM\Column(type="boolean")
      */
     private $sticky;
+
+    /**
+     * @Gedmo\SortableGroup
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private string $entity;
 
     public function __toString(): string
     {
