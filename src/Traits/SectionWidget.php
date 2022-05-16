@@ -25,10 +25,14 @@ trait SectionWidget
     }
 
     /**
-     * @return Collection
+     * @return Collection|null
      */
-    public function getSections(): Collection
+    public function getSections(): ?Collection
     {
+        if (!$this->sections) {
+            return null;
+        }
+
         return $this->sections->filter(function (Section $section) {
             return $section->getEnabled();
         });
@@ -41,6 +45,10 @@ trait SectionWidget
      */
     public function addSection(Section $section): self
     {
+        if (!$this->sections) {
+            return $thi;
+        }
+
         if (!$this->sections->contains($section)) {
             $this->sections[] = $section;
         }

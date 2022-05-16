@@ -3,6 +3,7 @@
 namespace Hippocampe\Bundle\PageBundle\Entity;
 
 use App\Entity\Page;
+use App\Entity\Tab;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
