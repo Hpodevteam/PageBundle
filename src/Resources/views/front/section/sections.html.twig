@@ -1,0 +1,5 @@
+{% block sections %}
+    {% for section in sections %}
+        {% include 'front/section/section.html.twig' with { 'section': section } %}
+    {% endfor %}
+{% endblock %}
