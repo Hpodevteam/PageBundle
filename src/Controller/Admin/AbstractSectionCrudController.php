@@ -49,7 +49,8 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             FormField::addPanel('Administration'),
             BooleanField::new('enabled', 'Activé'),
 
-            FormField::addPanel('Contenu')
+            FormField::addPanel('Contenu'),
+            TextField::new('chapo', 'Chapo')
         ];
     }
 

@@ -2,21 +2,21 @@
 
 namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 
-use Hippocampe\Bundle\PageBundle\Entity\SectionText;
+use Hippocampe\Bundle\PageBundle\Entity\SectionShortCode;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class SectionTextCrudController extends AbstractSectionCrudController
+class SectionShortCodeCrudController extends AbstractSectionCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return SectionText::class;
+        return SectionShortCode::class;
     }
 
     public function configureFields(string $pageName): iterable
     {
         return array_merge(parent::configureFields($pageName), [
-            TextEditorField::new('content', 'Contenu')
+            TextField::new('shortCode', 'Short code'),
         ]);
     }
 }

@@ -8,13 +8,6 @@ use Twig\TwigFunction;
 
 class PageBundleTwigExtension extends AbstractExtension
 {
-    private $serviceLocator;
-
-    public function __construct(ServiceLocator $serviceLocator)
-    {
-        $this->serviceLocator = $serviceLocator;
-    }
-
     public function getFunctions(): array
     {
         return [
@@ -22,8 +15,12 @@ class PageBundleTwigExtension extends AbstractExtension
         ];
     }
 
-    public function getEntity($data)
+    public function getEntity($data): ?string
     {
-        var_dump($data);
+        try {
+            return (new \ReflectionClass($data))->getShortName();
+        } catch (\ReflectionException $e) {
+            return null;
+        }
     }
 }

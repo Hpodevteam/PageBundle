@@ -10,3 +10,8 @@ services:
   Hippocampe\Bundle\PageBundle\Repository\:
     resource: '../../Repository/*'
     tags: [ 'doctrine.repository_service' ]
+
+  twig.extension:
+    class: Hippocampe\Bundle\PageBundle\Twig\PageBundleTwigExtension
+    tags:
+      - { name: twig.extension }

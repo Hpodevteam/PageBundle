@@ -29,7 +29,9 @@ trait SectionWidget
      */
     public function getSections(): Collection
     {
-        return $this->sections;
+        return $this->sections->filter(function (Section $section) {
+            return $section->getEnabled();
+        });
     }
 
     /**

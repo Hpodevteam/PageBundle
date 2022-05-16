@@ -5,13 +5,12 @@ namespace Hippocampe\Bundle\PageBundle\Entity;
 use App\Entity\Page;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Hippocampe\Bundle\PageBundle\Traits\SectionWidget;
 
 /**
  * @ORM\Entity(repositoryClass="Hippocampe\Bundle\PageBundle\Repository\SectionRepository")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="type", type="integer")
- * @ORM\DiscriminatorMap({1 = "SectionText", 2 = "SectionText2Col"})
+ * @ORM\DiscriminatorMap({1 = "SectionText", 2 = "SectionText2Col", 3 = "SectionShortCode"})
  */
 abstract class Section
 {
@@ -69,6 +68,12 @@ abstract class Section
      * @ORM\Column(type="boolean")
      */
     private $enabled;
+
+    public function __construct()
+    {
+        $this->enabled = true;
+    }
+
 
     public function __toString(): string
     {

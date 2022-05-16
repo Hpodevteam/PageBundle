@@ -1,13 +1,4 @@
 <?php
-/**
- * Trait used for TypeEnum static classes
- * Be aware that the class using the trait must implement
- * the static variable $typeName
- *
- * User: cyril
- * Date: 07/09/17
- * Time: 12:25
- */
 
 namespace Hippocampe\Bundle\PageBundle\Enum;
 
