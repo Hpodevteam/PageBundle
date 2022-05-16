@@ -65,6 +65,11 @@ abstract class Section
      */
     private $sticky;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $enabled;
+
     public function __toString(): string
     {
         return $this->title;
@@ -176,6 +181,18 @@ abstract class Section
     public function setSticky(bool $sticky): self
     {
         $this->sticky = $sticky;
+
+        return $this;
+    }
+
+    public function getEnabled(): ?bool
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(bool $enabled): self
+    {
+        $this->enabled = $enabled;
 
         return $this;
     }

@@ -43,6 +43,9 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
                 ->setChoices(SectionTitleTypeEnum::getChoices()),
             TextField::new('backgroundColor', 'Couleur de fond'),
 
+            FormField::addPanel('Administration'),
+            BooleanField::new('enabled', 'Activé'),
+
             FormField::addPanel('Contenu')
         ];
     }
