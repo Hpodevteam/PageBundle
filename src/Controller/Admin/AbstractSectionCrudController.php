@@ -7,10 +7,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Hippocampe\Bundle\PageBundle\Entity\Section;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTitleTypeEnum;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 abstract class AbstractSectionCrudController extends AbstractCrudController
@@ -32,9 +35,15 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            FormField::addPanel('Configuration'),
             IdField::new('id', 'ID')->hideOnForm(),
             TextField::new('title', 'Titre'),
             BooleanField::new('sticky', 'Sticky'),
+            ChoiceField::new('titleType', 'Type de titre')
+                ->setChoices(SectionTitleTypeEnum::getChoices()),
+            TextField::new('backgroundColor', 'Couleur de fond'),
+
+            FormField::addPanel('Contenu')
         ];
     }
 
