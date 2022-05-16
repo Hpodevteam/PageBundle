@@ -15,3 +15,5 @@ services:
     class: Hippocampe\Bundle\PageBundle\Twig\PageBundleTwigExtension
     tags:
       - { name: twig.extension }
+    arguments:
+      $spacer: '%page.sections.spacer%'

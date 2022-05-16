@@ -1,9 +1,9 @@
 {% block section %}
-    <div id="section_{{ section.id }}" class="section {{ section.styleType }}">
+    <section id="section_{{ section.id }}" class="section content {{ section.styleType }}">
         <h2 class="section-title {{ section.titleType }}">{{ section.title }}</h2>
 
         {% include '@!Page/front/section/includes/_' ~ getEntity(section) ~ '.html.twig' with { 'section': section } %}
-    </div>
+    </section>
 
     {% include '@!Page/front/includes/_spacer.html.twig' %}
 {% endblock %}
