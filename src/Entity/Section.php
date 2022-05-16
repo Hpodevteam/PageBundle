@@ -65,12 +65,6 @@ abstract class Section
      */
     private $sticky;
 
-    /**
-     * @Gedmo\SortableGroup
-     * @ORM\Column(type="integer")
-     */
-    private string $entityId;
-
     public function __toString(): string
     {
         return $this->title;
