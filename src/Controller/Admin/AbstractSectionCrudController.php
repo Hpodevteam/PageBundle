@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Hippocampe\Bundle\PageBundle\Entity\Section;
+use Hippocampe\Bundle\PageBundle\Enum\SectionStyleTypeEnum;
 use Hippocampe\Bundle\PageBundle\Enum\SectionTitleTypeEnum;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -41,6 +42,8 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             BooleanField::new('sticky', 'Sticky'),
             ChoiceField::new('titleType', 'Type de titre')
                 ->setChoices(SectionTitleTypeEnum::getChoices()),
+            ChoiceField::new('styleType', 'Gestion des marges')
+                ->setChoices(SectionStyleTypeEnum::getChoices()),
             TextField::new('backgroundColor', 'Couleur de fond'),
 
             FormField::addPanel('Administration'),
