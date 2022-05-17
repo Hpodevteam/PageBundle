@@ -15,6 +15,21 @@ page:
         spacer: 'your spacing class'
 ```
 
+Open your ```config/packages/vich_uploader.yaml``` file and add :
+
+```yaml
+parameters:
+  app.path.section_image: /uploads/section_image
+
+vich_uploader:
+  mappings:
+      section_image:
+          uri_prefix: '%app.path.section_image%'
+          upload_destination: '%kernel.project_dir%/public/uploads/section_image'
+          namer: Vich\UploaderBundle\Naming\OrignameNamer
+
+```
+
 ## Usage
 
 Add trait ```SectionWidget``` to the entity to be managed.
