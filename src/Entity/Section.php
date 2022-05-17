@@ -11,7 +11,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Entity(repositoryClass="Hippocampe\Bundle\PageBundle\Repository\SectionRepository")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="type", type="integer")
- * @ORM\DiscriminatorMap({1 = "SectionText", 2 = "SectionText2Col", 3 = "SectionShortCode"})
+ * @ORM\DiscriminatorMap({
+ *     1 = "SectionText",
+ *     2 = "SectionText2Col",
+ *     3 = "SectionShortCode",
+ *     4 = "SectionTable",
+ *     5 = "SectionImage",
+ *     6 = "SectionTextImage"
+ * })
  */
 abstract class Section
 {
@@ -66,7 +73,7 @@ abstract class Section
     private $sticky;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $enabled;
 
@@ -196,7 +203,7 @@ abstract class Section
         return $this->enabled;
     }
 
-    public function setEnabled(bool $enabled): self
+    public function setEnabled(?bool $enabled): self
     {
         $this->enabled = $enabled;
 

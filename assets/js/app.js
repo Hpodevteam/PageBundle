@@ -1,4 +1,4 @@
-import './css/app.scss';
+import '../css/app.scss';
 
 global.$ = global.jQuery = $;
 

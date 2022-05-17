@@ -46,7 +46,7 @@ trait SectionWidget
     public function addSection(Section $section): self
     {
         if (!$this->sections) {
-            return $thi;
+            return $this;
         }
 
         if (!$this->sections->contains($section)) {

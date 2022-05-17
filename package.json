@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@symfony/webpack-encore": "^1.3",
+    "file-loader": "^6.0.0",
     "jquery": "^3.5.1",
     "jquery-ui": "^1.13.0",
     "sass": "^1.51.0",
@@ -15,6 +16,7 @@
     "build": "encore production"
   },
   "dependencies": {
+    "ckeditor4": "^4.13.0",
     "sortablejs": "^1.15.0"
   }
 }

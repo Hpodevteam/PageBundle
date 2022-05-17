@@ -1,0 +1,14 @@
+{% block tabs %}
+    <div class="tab-content" id="tabContent">
+        {% for tab in tabs %}
+            <div
+                    class="tab-pane fade {% if loop.index0 == 0 %}show active{% endif %}"
+                    id="index{{ tab.id }}"
+                    role="tabpanel"
+                    aria-labelledby="tab-index{{ tab.id }}"
+            >
+                {% include '@!Page/front/section/sections.html.twig' with { 'sections': tab.sections } %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

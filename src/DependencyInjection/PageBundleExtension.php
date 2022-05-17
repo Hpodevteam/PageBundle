@@ -19,6 +19,7 @@ class PageBundleExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('page.sections.spacer', $config['sections']['spacer']);
+        $container->setParameter('page.sections.vich_uploader_path', $config['sections']['vich_uploader_path']);
     }
 
     public function getAlias(): string

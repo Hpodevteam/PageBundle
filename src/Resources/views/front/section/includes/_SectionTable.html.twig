@@ -1,0 +1,33 @@
+{% block content %}
+    {% set headValues = section.rows[0].rowValues|split(';') %}
+    <div class="row mt-5">
+        <div class="col-12">
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        {% for head in headValues %}
+                            <th title="Field #{{ loop.index }}" class="{% if loop.index0 > 0 %}text-center{% endif %}">{{ head }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in section.rows %}
+                        {% if loop.index0 > 0 %}
+                            <tr>
+                                {% for value in row.rowValues|split(';') %}
+                                    <td class="{% if loop.index0 > 0 %}text-center{% endif %}">
+                                        {% if row.isBold %}
+                                            <strong>{{ value }}</strong>
+                                        {% else %}
+                                            {{ value }}
+                                        {% endif %}
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

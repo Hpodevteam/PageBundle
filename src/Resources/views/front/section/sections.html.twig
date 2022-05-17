@@ -1,5 +1,7 @@
 {% block sections %}
-    {% for section in sections %}
-        {% include '@!Page/front/section/section.html.twig' with { 'section': section } %}
-    {% endfor %}
+   <div class="container">
+       {% for section in sections %}
+           {% include '@!Page/front/section/section.html.twig' with { 'section': section } %}
+       {% endfor %}
+   </div>
 {% endblock %}

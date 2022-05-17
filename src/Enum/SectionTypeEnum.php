@@ -12,6 +12,7 @@ class SectionTypeEnum
     const TYPE_TEXTIMAGE    = 'SectionTextImage';
     const TYPE_SHORTCODE    = 'SectionShortCode';
     const TYPE_TEXT2COL     = 'SectionText2Col';
+    const TYPE_TABLE        = 'SectionTable';
 
     protected static array $typeName = [
         self::TYPE_TEXT => 'Section Texte',
@@ -19,5 +20,6 @@ class SectionTypeEnum
         self::TYPE_TEXTIMAGE => 'Section Texte & Image',
         self::TYPE_SHORTCODE => 'Section dynamique',
         self::TYPE_TEXT2COL => 'Section texte 2 colonnes',
+        self::TYPE_TABLE => 'Section table HTML'
     ];
 }

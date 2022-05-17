@@ -15,10 +15,10 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->arrayNode('sections')
                     ->children()
-                        ->variableNode('spacer')
+                        ->variableNode('spacer')->end()
+                        ->variableNode('vich_uploader_path')->end()
                     ->end()
                 ->end()
-            ->end()
         ;
 
         return $treeBuilder;
