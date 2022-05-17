@@ -30,7 +30,6 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             ->overrideTemplates([
                 'crud/edit' => '@Page/admin/section/edit.html.twig',
             ])
-            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
         ;
     }
 
