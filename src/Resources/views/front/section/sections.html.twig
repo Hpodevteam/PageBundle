@@ -5,3 +5,8 @@
        {% endfor %}
    </div>
 {% endblock %}
+
+{% block javascript %}
+    {% include '@!Page/front/includes/_js.html.twig' %}
+    {% include '@!Page/front/includes/_chart_builder.html.twig' %}
+{% endblock %}

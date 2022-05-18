@@ -18,7 +18,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     4 = "SectionTable",
  *     5 = "SectionImage",
  *     6 = "SectionTextImage",
- *     7 = "SectionPieChart"
+ *     7 = "SectionPieChart",
+ *     8 = "SectionBarChart",
+ *     9 = "SectionLineChart"
  * })
  */
 abstract class Section

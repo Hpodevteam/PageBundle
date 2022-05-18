@@ -4,24 +4,27 @@ namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use Hippocampe\Bundle\PageBundle\Entity\SectionPieChart;
-use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\PieChartRowType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Hippocampe\Bundle\PageBundle\Entity\SectionLineChart;
+use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\BarChartRowType;
+use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\LineChartRowType;
 
-class SectionPieChartCrudController extends AbstractSectionCrudController
+class SectionLineChartCrudController extends AbstractSectionCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return SectionPieChart::class;
+        return SectionLineChart::class;
     }
 
     public function configureFields(string $pageName): iterable
     {
         return array_merge(parent::configureFields($pageName), [
-            CollectionField::new('pieChartRows', 'Entrées')
+            TextField::new('labels', 'Labels'),
+            CollectionField::new('lineChartRows', 'Entrées')
                 ->allowAdd()
                 ->allowDelete()
                 ->setEntryIsComplex(true)
-                ->setEntryType(PieChartRowType::class),
+                ->setEntryType(LineChartRowType::class),
             TextEditorField::new('legend', 'Légende')
         ]);
     }

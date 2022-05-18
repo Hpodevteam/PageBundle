@@ -2,18 +2,15 @@
 
 namespace Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart;
 
-use Hippocampe\Bundle\PageBundle\Entity\Chart\PieChartRow;
-use Hippocampe\Bundle\PageBundle\Enum\ChartColorTypeEnum;
-use Hippocampe\Bundle\PageBundle\Traits\ChartColors;
+use Hippocampe\Bundle\PageBundle\Entity\Chart\LineChartRow;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PieChartRowType extends AbstractType
+class LineChartRowType extends AbstractType
 {
     private $colors;
 
@@ -43,8 +40,8 @@ class PieChartRowType extends AbstractType
             ->add('label', TextType::class, [
                 'label' => 'Label'
             ])
-            ->add('data', NumberType::class, [
-                'label' => 'Donnée',
+            ->add('data', TextType::class, [
+                'label' => 'Données',
             ])
             ->add('color', ChoiceType::class, [
                 'required' => false,
@@ -57,7 +54,7 @@ class PieChartRowType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => PieChartRow::class
+            'data_class' => LineChartRow::class
         ]);
     }
 }

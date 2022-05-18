@@ -1,0 +1,103 @@
+<script>
+    $(document).ready( function () {
+        {% for section in sections %}
+            {% if isChartSection(section) %}
+                {% if section.className == 'SectionPieChart' %}
+                    var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+
+                    var values = [];
+
+                    {% for pieChartRow in section.pieChartRows %}
+                    values.push({
+                        "label": "{{ pieChartRow.label }}",
+                        "value": {{ pieChartRow.data }},
+                        "color": "{{ pieChartRow.color }}"
+                    })
+                    {% endfor %}
+
+                    var vLabels = values.map(v => v.label);
+                    var vValues = values.map(v => v.value);
+                    var vColors = values.map(v => v.color);
+
+                    PieChart.draw(ctx, vLabels, vValues, vColors);
+                {% endif %}
+            {% endif %}
+
+            {% if section.className == 'SectionBarChart' %}
+                var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+                ctx.height = 400;
+
+                var labels = [];
+                var values = [];
+
+                {% for label in section.labels|split(";") %}
+                    labels.push("{{ label }}");
+                {% endfor %}
+
+                {% for barChartRow in section.barChartRows %}
+                    values.push({
+                        "label": "{{ barChartRow.label }}",
+                        "values": [
+                            {% for data in barChartRow.data|split(';') %}
+                                {{ data }}{% if not loop.last %},{% endif %}
+                            {% endfor %}
+                        ],
+                        "color": "{{ barChartRow.color }}"
+                    })
+                {% endfor %}
+
+                console.log(values);
+
+                index = 0;
+                datasets = [];
+                values.forEach(item => {
+                    datasets.push({
+                        label: item.label,
+                        data: item.values,
+                        backgroundColor: item.color,
+                        borderColor: item.color,
+                    });
+                })
+
+                BarChart.draw(ctx, labels, datasets, "", true, "x");
+            {% endif %}
+
+            {% if section.className == 'SectionLineChart' %}
+                var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+                ctx.height = 400;
+
+                var labels = [];
+                var values = [];
+
+                {% for label in section.labels|split(";") %}
+                labels.push("{{ label }}");
+                {% endfor %}
+
+                {% for lineChartRow in section.lineChartRows %}
+                values.push({
+                    "label": "{{ lineChartRow.label }}",
+                    "values": [
+                        {% for data in lineChartRow.data|split(';') %}
+                        {{ data }}{% if not loop.last %},{% endif %}
+                        {% endfor %}
+                    ],
+                    "color": "{{ lineChartRow.color }}"
+                })
+                {% endfor %}
+
+                index = 0;
+                datasets = [];
+                values.forEach(item => {
+                    datasets.push({
+                        label: item.label,
+                        data: item.values,
+                        backgroundColor: item.color,
+                        borderColor: item.color,
+                    });
+                })
+
+                LineChart.draw(ctx, labels, datasets, "", true, "x");
+            {% endif %}
+        {% endfor %}
+    })
+</script>

@@ -11,6 +11,18 @@ services:
     resource: '../../Repository/*'
     tags: [ 'doctrine.repository_service' ]
 
+  Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\PieChartRowType:
+    arguments:
+      $colors: '%page.sections.colors%'
+
+  Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\BarChartRowType:
+    arguments:
+      $colors: '%page.sections.colors%'
+
+  Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\LineChartRowType:
+    arguments:
+      $colors: '%page.sections.colors%'
+
   twig.extension:
     class: Hippocampe\Bundle\PageBundle\Twig\PageBundleTwigExtension
     tags:

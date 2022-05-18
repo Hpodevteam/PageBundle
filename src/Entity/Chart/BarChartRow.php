@@ -5,12 +5,12 @@ namespace Hippocampe\Bundle\PageBundle\Entity\Chart;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Hippocampe\Bundle\PageBundle\Entity\SectionPieChart;
+use Hippocampe\Bundle\PageBundle\Entity\SectionBarChart;
 
 /**
- * @ORM\Entity(repositoryClass="Hippocampe\Bundle\PageBundle\Repository\Chart\PieChartRowRepository")
+ * @ORM\Entity(repositoryClass="Hippocampe\Bundle\PageBundle\Repository\Chart\BarChartRowRepository")
  */
-class PieChartRow
+class BarChartRow
 {
     /**
      * @ORM\Id()
@@ -20,9 +20,9 @@ class PieChartRow
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionPieChart", inversedBy="rows")
+     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionBarChart", inversedBy="rows")
      */
-    private ?SectionPieChart $sectionPieChart;
+    private ?SectionBarChart $sectionBarChart;
 
     /**
      * @Gedmo\SortablePosition
@@ -36,7 +36,7 @@ class PieChartRow
     private ?string $label;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private ?string $data;
 
@@ -54,21 +54,21 @@ class PieChartRow
     }
 
     /**
-     * @return SectionPieChart|null
+     * @return SectionBarChart|null
      */
-    public function getSectionPieChart(): ?SectionPieChart
+    public function getSectionBarChart(): ?SectionBarChart
     {
-        return $this->sectionPieChart;
+        return $this->sectionBarChart;
     }
 
     /**
-     * @param SectionPieChart|null $sectionPieChart
+     * @param SectionBarChart|null $sectionBarChart
      *
      * @return $this
      */
-    public function setSectionPieChart(?SectionPieChart $sectionPieChart): self
+    public function setSectionBarChart(?SectionBarChart $sectionBarChart): self
     {
-        $this->sectionPieChart = $sectionPieChart;
+        $this->sectionBarChart = $sectionBarChart;
 
         return $this;
     }
@@ -158,6 +158,6 @@ class PieChartRow
      */
     public function __toString(): string
     {
-        return $this->label;
+        return 'Ligne #' . ($this->position + 1);
     }
 }

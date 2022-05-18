@@ -19,6 +19,11 @@ class PageBundleExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('page.sections.spacer', $config['sections']['spacer']);
+        $container->setParameter('page.sections.colors', $config['sections']['colors']);
+
+        /*foreach ($config['sections']['colors'] as $color) {
+            $container->setParameter('page.sections.colors.' . $color['name'], $color);
+        }*/
     }
 
     public function getAlias(): string

@@ -1,7 +1,12 @@
 import '../css/app.scss';
 
-global.$ = global.jQuery = $;
 
-$(document).ready( function () {
-    console.log('jQuery loaded');
-})
+import PieChart from './charts/pie_chart';
+import BarChart from './charts/bar_chart';
+import LineChart from './charts/line_chart';
+
+
+global.$ = global.jQuery = $;
+global.PieChart = PieChart;
+global.BarChart = BarChart;
+global.LineChart = LineChart;

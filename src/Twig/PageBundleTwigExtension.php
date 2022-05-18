@@ -2,6 +2,8 @@
 
 namespace Hippocampe\Bundle\PageBundle\Twig;
 
+use Hippocampe\Bundle\PageBundle\Entity\Section;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTypeEnum;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -20,6 +22,7 @@ class PageBundleTwigExtension extends AbstractExtension
         return [
             new TwigFunction('getEntity', [$this, 'getEntity']),
             new TwigFunction('spacerValue', [$this, 'spacerValue']),
+            new TwigFunction('isChartSection', [$this, 'isChartSection'])
         ];
     }
 
@@ -39,5 +42,14 @@ class PageBundleTwigExtension extends AbstractExtension
         }
 
         return null;
+    }
+
+    public function isChartSection(Section $section): bool
+    {
+        if ($section->getClassName() == SectionTypeEnum::TYPE_PIE_CHART) {
+            return true;
+        }
+
+        return false;
     }
 }
