@@ -13,6 +13,7 @@ class SectionTypeEnum
     const TYPE_SHORTCODE    = 'SectionShortCode';
     const TYPE_TEXT2COL     = 'SectionText2Col';
     const TYPE_TABLE        = 'SectionTable';
+    const TYPE_PIE_CHART    = 'SectionPieChart';
 
     protected static array $typeName = [
         self::TYPE_TEXT => 'Section Texte',
@@ -20,6 +21,7 @@ class SectionTypeEnum
         self::TYPE_TEXTIMAGE => 'Section Texte & Image',
         self::TYPE_SHORTCODE => 'Section dynamique',
         self::TYPE_TEXT2COL => 'Section texte 2 colonnes',
-        self::TYPE_TABLE => 'Section table HTML'
+        self::TYPE_TABLE => 'Section table HTML',
+        self::TYPE_PIE_CHART => 'Section [graphique][camembert]'
     ];
 }

@@ -16,7 +16,7 @@
     "build": "encore production"
   },
   "dependencies": {
-    "ckeditor4": "^4.13.0",
-    "sortablejs": "^1.15.0"
+    "sortablejs": "^1.15.0",
+    "chart.js": "^3.5.1"
   }
 }
