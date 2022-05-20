@@ -17,8 +17,8 @@ class SectionPieChart extends Section
      * @ORM\OrderBy({"position" = "ASC"})
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Chart\PieChartRow", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\JoinTable(name="section_pie_chart_row",
-     *      joinColumns={@ORM\JoinColumn(name="section_pie_chart_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="pie_chart_row_id", referencedColumnName="id", unique=true)}
+     *      joinColumns={@ORM\JoinColumn(name="section_pie_chart_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="pie_chart_row_id", referencedColumnName="id", unique=true, onDelete="CASCADE")}
      *      )
      */
     private $pieChartRows;

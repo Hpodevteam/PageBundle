@@ -22,8 +22,8 @@ class SectionBarChart extends Section
      * @ORM\OrderBy({"position" = "ASC"})
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Chart\BarChartRow", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\JoinTable(name="section_bar_chart_row",
-     *      joinColumns={@ORM\JoinColumn(name="section_bar_chart_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="bar_chart_row_id", referencedColumnName="id", unique=true)}
+     *      joinColumns={@ORM\JoinColumn(name="section_bar_chart_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="bar_chart_row_id", referencedColumnName="id", unique=true, onDelete="CASCADE")}
      *      )
      */
     private $barChartRows;

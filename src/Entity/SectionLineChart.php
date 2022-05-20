@@ -22,8 +22,8 @@ class SectionLineChart extends Section
      * @ORM\OrderBy({"position" = "ASC"})
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Chart\LineChartRow", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\JoinTable(name="section_line_chart_row",
-     *      joinColumns={@ORM\JoinColumn(name="section_line_chart_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="line_chart_row_id", referencedColumnName="id", unique=true)}
+     *      joinColumns={@ORM\JoinColumn(name="section_line_chart_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="line_chart_row_id", referencedColumnName="id", unique=true, onDelete="CASCADE")}
      *      )
      */
     private $lineChartRows;
