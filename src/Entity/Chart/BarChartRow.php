@@ -21,6 +21,7 @@ class BarChartRow
 
     /**
      * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionBarChart", inversedBy="rows")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?SectionBarChart $sectionBarChart;
 

@@ -21,6 +21,7 @@ class LineChartRow
 
     /**
      * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionLineChart", inversedBy="rows")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?SectionLineChart $sectionLineChart;
 

@@ -21,6 +21,7 @@ class PieChartRow
 
     /**
      * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionPieChart", inversedBy="rows")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?SectionPieChart $sectionPieChart;
 
