@@ -28,11 +28,6 @@ class SectionRowType extends AbstractType
                 'attr' => ['class' => 'title'],
                 'constraints' => new NotBlank(),
             ])
-            ->add('sticky', CheckboxType::class, [
-                'required' => false,
-                'attr' => ['class' => 'sticky'],
-                'label' => false,
-            ])
             ->add('className', ChoiceType::class, [
                 'choices' => array_flip(SectionTypeEnum::getTypeNames()),
                 'label' => 'Type',
