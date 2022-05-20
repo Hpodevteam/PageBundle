@@ -30,11 +30,24 @@ class SectionTextImage extends Section
      */
     private $imageToLeft;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $floatMode;
+
+    /**
+     * @return string|null
+     */
     public function getContent(): ?string
     {
         return $this->content;
     }
 
+    /**
+     * @param string|null $content
+     *
+     * @return $this
+     */
     public function setContent(?string $content): self
     {
         $this->content = $content;
@@ -54,11 +67,19 @@ class SectionTextImage extends Section
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getDivision(): ?string
     {
         return $this->division;
     }
 
+    /**
+     * @param string $division
+     *
+     * @return $this
+     */
     public function setDivision(string $division): self
     {
         $this->division = $division;
@@ -66,14 +87,42 @@ class SectionTextImage extends Section
         return $this;
     }
 
+    /**
+     * @return bool|null
+     */
     public function getImageToLeft(): ?bool
     {
         return $this->imageToLeft;
     }
 
+    /**
+     * @param bool|null $imageToLeft
+     *
+     * @return $this
+     */
     public function setImageToLeft(?bool $imageToLeft): self
     {
         $this->imageToLeft = $imageToLeft;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getFloatMode(): ?bool
+    {
+        return $this->floatMode;
+    }
+
+    /**
+     * @param bool|null $floatMode
+     *
+     * @return $this
+     */
+    public function setFloatMode(?bool $floatMode): self
+    {
+        $this->floatMode = $floatMode;
 
         return $this;
     }

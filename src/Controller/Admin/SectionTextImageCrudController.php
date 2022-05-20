@@ -19,6 +19,8 @@ class SectionTextImageCrudController extends AbstractSectionCrudController
     {
         return array_merge(parent::configureFields($pageName), [
             BooleanField::new('imageToLeft', 'Image à gauche'),
+            BooleanField::new('floatMode', 'Mode "float"')
+                ->setHelp('Si cette case est cochée, un fois le texte plus long que l\'image, ce dernier passera en dessous.'),
             TextEditorField::new('content', 'Contenu')->setColumns(6),
             TextField::new('division', 'Division')->setColumns(6),
             HpoImageField::new('image', 'Image')->setColumns(6)

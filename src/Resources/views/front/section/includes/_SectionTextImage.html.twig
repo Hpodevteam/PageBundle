@@ -1,18 +1,40 @@
 {% block content %}
     <div class="row">
-        <div class="col-12 col-sm-6">
-            {% if section.imageToLeft %}
-                <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" width="100%">
-            {% else %}
-                {{ section.content|raw }}
-            {% endif %}
-        </div>
-        <div class="col-12 col-sm-6">
-            {% if section.imageToLeft %}
-                {{ section.content|raw }}
-            {% else %}
-                <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" width="100%">
-            {% endif %}
-        </div>
+        {% if section.floatMode %}
+            <div class="col-12">
+                {% if section.imageToLeft %}
+                    <img
+                            src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}"
+                            alt="{{ section.image.imageName }}"
+                            width="100%"
+                            class="float-left"
+                    >
+                    {{ section.content|raw }}
+                {% else %}
+                    {{ section.content|raw }}
+                    <img
+                            src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}"
+                            alt="{{ section.image.imageName }}"
+                            width="100%"
+                            class="float-right"
+                    >
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="col-12 col-sm-6">
+                {% if section.imageToLeft %}
+                    <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" width="100%">
+                {% else %}
+                    {{ section.content|raw }}
+                {% endif %}
+            </div>
+            <div class="col-12 col-sm-6">
+                {% if section.imageToLeft %}
+                    {{ section.content|raw }}
+                {% else %}
+                    <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" width="100%">
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
