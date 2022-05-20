@@ -45,6 +45,11 @@ abstract class Section
     /**
      * @ORM\Column(type="string", length=64, nullable=true)
      */
+    private $titleTag;
+
+    /**
+     * @ORM\Column(type="string", length=64, nullable=true)
+     */
     private $titleType;
 
     /**
@@ -111,6 +116,18 @@ abstract class Section
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getTitleTag(): ?string
+    {
+        return $this->titleTag;
+    }
+
+    public function setTitleTag(?string $titleTag): self
+    {
+        $this->titleTag = $titleTag;
 
         return $this;
     }
