@@ -76,7 +76,7 @@ abstract class Section
     private $position;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $sticky;
 
@@ -211,7 +211,7 @@ abstract class Section
         return $this->sticky;
     }
 
-    public function setSticky(bool $sticky): self
+    public function setSticky(?bool $sticky): self
     {
         $this->sticky = $sticky;
 
