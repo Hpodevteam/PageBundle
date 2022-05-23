@@ -19,7 +19,7 @@ class SectionBarChartYCrudController extends AbstractSectionCrudController
     public function configureFields(string $pageName): iterable
     {
         return array_merge(parent::configureFields($pageName), [
-            TextField::new('labels', 'Labels'),
+            TextField::new('label', 'Label'),
             CollectionField::new('barChartRows', 'Entrées')
                 ->allowAdd()
                 ->allowDelete()
