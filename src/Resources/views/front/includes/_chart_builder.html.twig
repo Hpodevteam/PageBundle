@@ -46,8 +46,6 @@
                     })
                 {% endfor %}
 
-                console.log(values);
-
                 index = 0;
                 datasets = [];
                 values.forEach(item => {
@@ -60,6 +58,48 @@
                 })
 
                 BarChart.draw(ctx, labels, datasets, "", true, "x");
+            {% endif %}
+
+            {% if section.className == 'SectionBarChartY' %}
+                var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+                ctx.height = 400;
+
+                var labels = [];
+                var values = [];
+                var vValues = [];
+                var vColors = [];
+
+                {% for barChartRow in section.barChartRows %}
+                    labels.push("{{ barChartRow.label }}");
+                {% endfor %}
+
+                {% for barChartRow in section.barChartRows %}
+                    vValues.push("{{ barChartRow.data }}");
+                {% endfor %}
+
+                {% for barChartRow in section.barChartRows %}
+                    vColors.push("{{ barChartRow.color }}");
+                {% endfor %}
+
+                values.push({
+                    "label": "{{ section.label }}",
+                    "values": vValues,
+                    "colors": vColors
+                })
+
+                index = 0;
+                datasets = [];
+
+                values.forEach(item => {
+                    datasets.push({
+                        label: item.label,
+                        data: item.values,
+                        backgroundColor: item.colors,
+                        borderColor: item.colors,
+                    });
+                })
+
+                BarChart.draw(ctx, labels, datasets, "", true, "y");
             {% endif %}
 
             {% if section.className == 'SectionLineChart' %}

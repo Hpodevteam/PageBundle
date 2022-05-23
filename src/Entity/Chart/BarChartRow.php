@@ -20,6 +20,7 @@ class BarChartRow
     private $id;
 
     /**
+     * @Gedmo\SortableGroup
      * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionBarChart", inversedBy="rows")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */

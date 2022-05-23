@@ -5,26 +5,26 @@ namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Hippocampe\Bundle\PageBundle\Entity\SectionLineChart;
-use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\BarChart;
-use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\LineChartRowType;
+use Hippocampe\Bundle\PageBundle\Entity\SectionBarChartY;
+use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\BarChartY;
+use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\BarChartYRowType;
 
-class SectionLineChartCrudController extends AbstractSectionCrudController
+class SectionBarChartYCrudController extends AbstractSectionCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return SectionLineChart::class;
+        return SectionBarChartY::class;
     }
 
     public function configureFields(string $pageName): iterable
     {
         return array_merge(parent::configureFields($pageName), [
             TextField::new('labels', 'Labels'),
-            CollectionField::new('lineChartRows', 'Entrées')
+            CollectionField::new('barChartRows', 'Entrées')
                 ->allowAdd()
                 ->allowDelete()
                 ->setEntryIsComplex(true)
-                ->setEntryType(LineChartRowType::class),
+                ->setEntryType(BarChartYRowType::class),
             TextEditorField::new('legend', 'Légende')
         ]);
     }

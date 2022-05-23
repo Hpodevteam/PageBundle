@@ -6,6 +6,7 @@ use App\Entity\Page;
 use App\Entity\Tab;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTypeEnum;
 
 /**
  * @ORM\Entity(repositoryClass="Hippocampe\Bundle\PageBundle\Repository\SectionRepository")
@@ -20,7 +21,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     6 = "SectionTextImage",
  *     7 = "SectionPieChart",
  *     8 = "SectionBarChart",
- *     9 = "SectionLineChart"
+ *     9 = "SectionLineChart",
+ *     10 = "SectionBarChartY"
  * })
  */
 abstract class Section
@@ -90,10 +92,9 @@ abstract class Section
         $this->enabled = true;
     }
 
-
     public function __toString(): string
     {
-        return $this->title;
+        return $this->title . ' | ' . SectionTypeEnum::getTypeName($this->getClassName());
     }
 
     public function getId(): ?int

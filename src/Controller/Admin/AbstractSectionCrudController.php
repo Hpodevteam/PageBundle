@@ -41,7 +41,7 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             IdField::new('id', 'ID')->hideOnForm(),
             TextField::new('title', 'Titre'),
             BooleanField::new('sticky', 'Sticky'),
-            ChoiceField::new('titleTag', 'Type de titre (balise html')
+            ChoiceField::new('titleTag', 'Type de titre (balise html)')
                 ->setChoices(SectionTitleTagEnum::getChoices()),
             ChoiceField::new('titleType', 'Taille du titre')
                 ->setChoices(SectionTitleTypeEnum::getChoices()),

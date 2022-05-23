@@ -19,6 +19,10 @@ services:
     arguments:
       $colors: '%page.sections.colors%'
 
+  Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\BarChartYRowType:
+    arguments:
+      $colors: '%page.sections.colors%'
+
   Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart\LineChartRowType:
     arguments:
       $colors: '%page.sections.colors%'
