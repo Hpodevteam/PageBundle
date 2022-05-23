@@ -2,7 +2,7 @@
 
 ## Installation
 ```bash 
-composer require "hippocampe/page-bundle"
+composer require "hpodevteam/page-bundle"
 ```
 
 ## Configuration
