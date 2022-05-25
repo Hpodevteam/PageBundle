@@ -1,4 +1,16 @@
 import Sortable from 'sortablejs';
+import '../css/app.scss';
+import 'bootstrap';
+import 'select2';
+
+import PieChart from "./charts/pie_chart";
+import BarChart from "./charts/bar_chart";
+import LineChart from "./charts/line_chart";
+
+global.$ = global.jQuery = $;
+global.PieChart = PieChart;
+global.BarChart = BarChart;
+global.LineChart = LineChart;
 
 $(document).ready( function () {
     let formName = document.querySelector(".content-body form").name;
@@ -16,4 +28,9 @@ $(document).ready( function () {
             },
         })
     }
+
+    $('.select2.data-select').select2({
+        tags: true,
+        width: '100%'
+    });
 })

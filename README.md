@@ -106,6 +106,24 @@ class PageCrudController extends AbstractCrudController
             ->setFormThemes(['@Page/admin/section/form_theme.html.twig'])
         ;
     }
+    
+    // Optionnal for tabs
+    // This allow you to redirect to parent instead of getting redirected to Crud::INDEX page
+    public function getRedirectResponseAfterSave(AdminContext $context, string $action): RedirectResponse
+    {
+        $submitButtonName = $context->getRequest()->request->all()['ea']['newForm']['btn'];
+
+        if (Action::SAVE_AND_RETURN === $submitButtonName) {
+            $url = $this->get(AdminUrlGenerator::class)
+                ->setController('Entity\\To\\Redirect')
+                ->setAction(Action::EDIT)
+                ->setEntityId($yourEntityId);
+
+            return $this->redirect($url);
+        }
+
+        return parent::getRedirectResponseAfterSave($context, $action);
+    }
 }
 ```
 
