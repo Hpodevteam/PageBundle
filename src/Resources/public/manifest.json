@@ -1,6 +1,7 @@
 {
   "bundles/page/app.css": "/build/app.css",
   "bundles/page/app.js": "/build/app.js",
+  "bundles/page/admin.css": "/build/admin.css",
   "bundles/page/admin.js": "/build/admin.js",
   "bundles/page/appStyles.css": "/build/appStyles.css"
 }

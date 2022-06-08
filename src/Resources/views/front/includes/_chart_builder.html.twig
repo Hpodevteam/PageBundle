@@ -1,26 +1,24 @@
 <script>
     $(document).ready( function () {
         {% for section in sections %}
-            {% if isChartSection(section) %}
-                {% if section.className == 'SectionPieChart' %}
-                    var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+            {% if section.className == 'SectionPieChart' %}
+                var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
 
-                    var values = [];
+                var values = [];
 
-                    {% for pieChartRow in section.pieChartRows %}
+                {% for pieChartRow in section.pieChartRows %}
                     values.push({
                         "label": "{{ pieChartRow.label }}",
                         "value": {{ pieChartRow.data }},
                         "color": "{{ pieChartRow.color }}"
                     })
-                    {% endfor %}
+                {% endfor %}
 
-                    var vLabels = values.map(v => v.label);
-                    var vValues = values.map(v => v.value);
-                    var vColors = values.map(v => v.color);
+                var vLabels = values.map(v => v.label);
+                var vValues = values.map(v => v.value);
+                var vColors = values.map(v => v.color);
 
-                    PieChart.draw(ctx, vLabels, vValues, vColors);
-                {% endif %}
+                PieChart.draw(ctx, vLabels, vValues, vColors);
             {% endif %}
 
             {% if section.className == 'SectionBarChart' %}

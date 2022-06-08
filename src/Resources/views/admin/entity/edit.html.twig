@@ -1,5 +1,9 @@
 {% extends '@!EasyAdmin/crud/edit.html.twig' %}
 
+{% block page_actions %}
+    {{ parent() }}
+{% endblock %}
+
 {% block edit_form %}
     {{ parent() }}
 {% endblock edit_form %}

@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ColorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -47,7 +48,7 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
                 ->setChoices(SectionTitleTypeEnum::getChoices()),
             ChoiceField::new('styleType', 'Gestion des marges')
                 ->setChoices(SectionStyleTypeEnum::getChoices()),
-            TextField::new('backgroundColor', 'Couleur de fond'),
+            ColorField::new('backgroundColor', 'Couleur de fond'),
 
             FormField::addPanel('Administration'),
             BooleanField::new('enabled', 'Activé'),
@@ -64,13 +65,17 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             'name' => $context->getRequest()->get('referrerName')
         ];
 
+        $submitButtonName = $context->getRequest()->request->all()['ea']['newForm']['btn'];
 
-        $url = $this->get(AdminUrlGenerator::class)
-            ->setController('\\App\\Controller\\Admin\\' . $referrer['name'] . 'CrudController')
-            ->setAction(Action::EDIT)
-            ->setEntityId($referrer['id']);
+        if (Action::SAVE_AND_RETURN === $submitButtonName) {
+            $url = $this->get(AdminUrlGenerator::class)
+                ->setController('\\App\\Controller\\Admin\\' . $referrer['name'] . 'CrudController')
+                ->setAction(Action::EDIT)
+                ->setEntityId($referrer['id']);
 
-        return $this->redirect($url);
+            return $this->redirect($url);
+        }
 
+        return parent::getRedirectResponseAfterSave($context, $action);
     }
 }

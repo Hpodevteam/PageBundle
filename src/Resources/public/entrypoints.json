@@ -9,6 +9,9 @@
       ]
     },
     "admin": {
+      "css": [
+        "/build/admin.css"
+      ],
       "js": [
         "/build/admin.js"
       ]

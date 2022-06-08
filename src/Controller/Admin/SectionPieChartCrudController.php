@@ -2,6 +2,7 @@
 
 namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use Hippocampe\Bundle\PageBundle\Entity\SectionPieChart;
