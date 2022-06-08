@@ -35,7 +35,7 @@
                 values.push({
                     "label": "{{ barChartRow.label }}",
                     "values": [
-                        {% for data in barChartRow.datas %}
+                        {% for data in barChartRow.data|split(';') %}
                         {{ data }}{% if not loop.last %},{% endif %}
                         {% endfor %}
                     ],

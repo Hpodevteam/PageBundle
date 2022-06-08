@@ -38,9 +38,9 @@ class BarChartRow
     private ?string $label;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private ?array $datas;
+    private ?string $data;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -115,31 +115,19 @@ class BarChartRow
         return $this->label;
     }
 
-    /**
-     * @param string|null $data
-     *
-     * @return $this
-     */
-    public function setDatas(?array $datas): self
+    public function setData(?string $data): self
     {
-        $this->data = $datas;
+        $this->data = $data;
 
         return $this;
     }
 
     /**
-     * @return array
+     * @return string|null
      */
-    public function getDatas(): ?array
+    public function getData(): ?string
     {
-        return $this->datas;
-    }
-
-    public function addData($data): self
-    {
-        $this->datas[] = $data;
-
-        return $this;
+        return $this->data;
     }
 
     /**

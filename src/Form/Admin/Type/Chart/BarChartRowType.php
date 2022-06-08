@@ -3,6 +3,7 @@
 namespace Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart;
 
 use Hippocampe\Bundle\PageBundle\Entity\Chart\BarChartRow;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTypeEnum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -41,12 +42,8 @@ class BarChartRowType extends AbstractType
             ->add('label', TextType::class, [
                 'label' => 'Label'
             ])
-            ->add('datas', ChoiceType::class, [
+            ->add('data', TextType::class, [
                 'label' => 'Données',
-                'multiple' => true,
-                'attr' => [
-                    'class' => 'select2 data-select'
-                ]
             ])
             ->add('color', ChoiceType::class, [
                 'required' => false,
