@@ -123,9 +123,9 @@ class BarChartRow
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getData(): ?array
+    public function getData(): ?string
     {
         return $this->data;
     }
