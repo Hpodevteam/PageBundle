@@ -3,6 +3,7 @@
 namespace Hippocampe\Bundle\PageBundle\Form\Admin\Type\Chart;
 
 use Hippocampe\Bundle\PageBundle\Entity\Chart\BarChartRow;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTypeEnum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;

@@ -115,14 +115,9 @@ class BarChartRow
         return $this->label;
     }
 
-    /**
-     * @param string|null $data
-     *
-     * @return $this
-     */
-    public function setDatas(?array $datas): self
+    public function setData(?string $data): self
     {
-        $this->data = $datas;
+        $this->data = $data;
 
         return $this;
     }
@@ -130,16 +125,9 @@ class BarChartRow
     /**
      * @return array
      */
-    public function getDatas(): ?array
+    public function getData(): ?array
     {
-        return $this->datas;
-    }
-
-    public function addData($data): self
-    {
-        $this->datas[] = $data;
-
-        return $this;
+        return $this->data;
     }
 
     /**
