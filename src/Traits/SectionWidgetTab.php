@@ -13,8 +13,8 @@ trait SectionWidgetTab
      * @ORM\OrderBy({"position" = "ASC"})
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Section", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\JoinTable(name="section_widget_tab",
-     *      joinColumns={@ORM\JoinColumn(name="entity_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="section_id", referencedColumnName="id", unique=true)}
+     *      joinColumns={@ORM\JoinColumn(name="entity_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="section_id", referencedColumnName="id", unique=true, onDelete="CASCADE")}
      *      )
      */
     private $sections;
