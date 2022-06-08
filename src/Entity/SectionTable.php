@@ -16,8 +16,8 @@ class SectionTable extends Section
      * @ORM\OrderBy({"position" = "ASC"})
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Table\Row", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\JoinTable(name="section_table_row",
-     *      joinColumns={@ORM\JoinColumn(name="section_table_id", referencedColumnName="id", onDelete="CASCADE"))},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="row_id", referencedColumnName="id", unique=true, onDelete="CASCADE"))}
+     *      joinColumns={@ORM\JoinColumn(name="section_table_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="row_id", referencedColumnName="id", unique=true, onDelete="CASCADE")}
      *      )
      */
     private $rows;
