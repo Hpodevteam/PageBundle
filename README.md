@@ -13,6 +13,11 @@ composer require "hpodevteam/page-bundle"
 page:
     sections:
         spacer: 'your spacing class'
+        colors:
+          color1:
+            name: 'Your color name'
+            value: '#fff'
+          # You can set other colors
 ```
 
 Open your ```config/packages/vich_uploader.yaml``` file and add :
@@ -105,6 +110,24 @@ class PageCrudController extends AbstractCrudController
             // This is mandatory
             ->setFormThemes(['@Page/admin/section/form_theme.html.twig'])
         ;
+    }
+    
+    // Optionnal for tabs
+    // This allow you to redirect to parent instead of getting redirected to Crud::INDEX page
+    public function getRedirectResponseAfterSave(AdminContext $context, string $action): RedirectResponse
+    {
+        $submitButtonName = $context->getRequest()->request->all()['ea']['newForm']['btn'];
+
+        if (Action::SAVE_AND_RETURN === $submitButtonName) {
+            $url = $this->get(AdminUrlGenerator::class)
+                ->setController('Entity\\To\\Redirect')
+                ->setAction(Action::EDIT)
+                ->setEntityId($yourEntityId);
+
+            return $this->redirect($url);
+        }
+
+        return parent::getRedirectResponseAfterSave($context, $action);
     }
 }
 ```

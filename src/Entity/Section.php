@@ -188,11 +188,7 @@ abstract class Section
 
     public function getClassName()
     {
-        try {
-            return (new \ReflectionClass($this))->getShortName();
-        } catch (\ReflectionException $e) {
-            return null;
-        }
+        return (new \ReflectionClass($this))->getShortName();
     }
 
     public function getStyleType(): ?string

@@ -41,8 +41,12 @@ class BarChartRowType extends AbstractType
             ->add('label', TextType::class, [
                 'label' => 'Label'
             ])
-            ->add('data', TextType::class, [
+            ->add('datas', ChoiceType::class, [
                 'label' => 'Données',
+                'multiple' => true,
+                'attr' => [
+                    'class' => 'select2 data-select'
+                ]
             ])
             ->add('color', ChoiceType::class, [
                 'required' => false,
