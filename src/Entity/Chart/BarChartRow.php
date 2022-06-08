@@ -38,9 +38,9 @@ class BarChartRow
     private ?string $label;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private ?array $datas;
+    private ?string $data;
 
     /**
      * @ORM\Column(type="text", nullable=true)
