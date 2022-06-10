@@ -6,6 +6,9 @@ use App\Entity\Page;
 use App\Entity\Tab;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Hippocampe\Bundle\PageBundle\Enum\SectionStyleTypeEnum;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTitleTagEnum;
+use Hippocampe\Bundle\PageBundle\Enum\SectionTitleTypeEnum;
 use Hippocampe\Bundle\PageBundle\Enum\SectionTypeEnum;
 
 /**
@@ -90,6 +93,11 @@ abstract class Section
     public function __construct()
     {
         $this->enabled = true;
+
+        $this->titleType = SectionTitleTypeEnum::TYPE_NORMAL;
+        $this->titleTag = SectionTitleTagEnum::TYPE_L;
+        $this->styleType = SectionStyleTypeEnum::TYPE_NORMAL;
+        $this->backgroundColor = '#ffffff';
     }
 
     public function __toString(): string

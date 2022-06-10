@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ColorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\HiddenField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -32,6 +33,7 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             ->overrideTemplates([
                 'crud/edit' => '@Page/admin/section/edit.html.twig',
             ])
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
         ;
     }
 
@@ -41,7 +43,7 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             FormField::addPanel('Configuration'),
             IdField::new('id', 'ID')->hideOnForm(),
             TextField::new('title', 'Titre'),
-            BooleanField::new('sticky', 'Sticky'),
+            HiddenField::new('sticky', 'Sticky'),
             ChoiceField::new('titleTag', 'Type de titre (balise html)')
                 ->setChoices(SectionTitleTagEnum::getChoices()),
             ChoiceField::new('titleType', 'Taille du titre')
@@ -54,7 +56,7 @@ abstract class AbstractSectionCrudController extends AbstractCrudController
             BooleanField::new('enabled', 'Activé'),
 
             FormField::addPanel('Contenu'),
-            TextField::new('chapo', 'Chapo')
+            HiddenField::new('chapo', 'Chapo')
         ];
     }
 
