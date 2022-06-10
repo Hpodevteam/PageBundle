@@ -1,7 +1,5 @@
 import Sortable from 'sortablejs';
 import '../css/app.scss';
-import 'bootstrap';
-import 'select2';
 
 import PieChart from "./charts/pie_chart";
 import BarChart from "./charts/bar_chart";
