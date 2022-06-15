@@ -21,7 +21,7 @@ class PieChartRow
 
     /**
      * @Gedmo\SortableGroup
-     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionPieChart", inversedBy="rows")
+     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionPieChart", inversedBy="pieChartRows")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?SectionPieChart $sectionPieChart;

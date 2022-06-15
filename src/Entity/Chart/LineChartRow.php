@@ -21,7 +21,7 @@ class LineChartRow
 
     /**
      * @Gedmo\SortableGroup
-     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionLineChart", inversedBy="rows")
+     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionLineChart", inversedBy="lineChartRows")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?SectionLineChart $sectionLineChart;

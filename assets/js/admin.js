@@ -1,4 +1,5 @@
 import Sortable from 'sortablejs';
+//import 'select2';
 import '../css/app.scss';
 
 import PieChart from "./charts/pie_chart";
@@ -27,8 +28,8 @@ $(document).ready( function () {
         })
     }
 
-    $('.select2.data-select').select2({
+    /*$('.select2.data-select').select2({
         tags: true,
         width: '100%'
-    });
+    });*/
 })

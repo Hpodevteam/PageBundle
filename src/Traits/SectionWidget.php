@@ -14,7 +14,7 @@ trait SectionWidget
      * @ORM\ManyToMany(targetEntity="Hippocampe\Bundle\PageBundle\Entity\Section", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\JoinTable(name="section_widget",
      *      joinColumns={@ORM\JoinColumn(name="entity_id", referencedColumnName="id", onDelete="CASCADE")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="section_id", referencedColumnName="id", unique=true,  onDelete="CASCADE")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="section_id", referencedColumnName="id", unique=true, onDelete="CASCADE")}
      *      )
      */
     private $sections;

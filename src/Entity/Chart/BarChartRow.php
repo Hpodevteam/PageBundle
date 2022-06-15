@@ -21,7 +21,7 @@ class BarChartRow
 
     /**
      * @Gedmo\SortableGroup
-     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionBarChart", inversedBy="rows")
+     * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionBarChart", inversedBy="barChartRows")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?SectionBarChart $sectionBarChart;
