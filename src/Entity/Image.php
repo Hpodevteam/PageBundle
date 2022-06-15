@@ -29,7 +29,7 @@ class Image
      * @Vich\UploadableField(mapping="section_image", fileNameProperty="imageName")
      * @var File
      */
-    private File $imageFile;
+    private $imageFile;
 
     /**
      * @ORM\Column(type="datetime")
