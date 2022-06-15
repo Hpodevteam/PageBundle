@@ -65,7 +65,7 @@ class Image
      * @param File|null $imageFile
      * @return Image
      */
-    public function setImageFile(File $imageFile = null): self
+    public function setImageFile(?File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
 
