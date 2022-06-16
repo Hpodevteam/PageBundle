@@ -38,7 +38,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="position-relative">
-                            <canvas id="{{ edit_form.vars.value.title|lower|replace({' ': "-"}) }}" width="400" height="400"></canvas>
+                            <canvas id="{{ edit_form.vars.value.title|lower|replace({" ": "-", "'": ""}) }}" width="400" height="400"></canvas>
                         </div>
                     </div>
                     <div class="modal-footer">
