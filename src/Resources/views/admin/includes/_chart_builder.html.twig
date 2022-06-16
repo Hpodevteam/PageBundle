@@ -1,7 +1,7 @@
 <script>
     $(document).ready( function () {
         {% if section.className == 'SectionPieChart' %}
-            var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+            var ctx = $("#{{ section.title|lower|replace({" ": "-", "'": ""}) }}")
 
             var values = [];
 
@@ -21,7 +21,7 @@
         {% endif %}
 
         {% if section.className == 'SectionBarChart' %}
-            var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+            var ctx = $("#{{ section.title|lower|replace({" ": "-", "'": ""}) }}")
             ctx.height = 400;
 
             var labels = [];
@@ -58,7 +58,7 @@
         {% endif %}
 
         {% if section.className == 'SectionLineChart' %}
-            var ctx = $("#{{ section.title|lower|replace({' ': "-"}) }}")
+            var ctx = $("#{{ section.title|lower|replace({" ": "-", "'": ""}) }}")
             ctx.height = 400;
 
             var labels = [];
