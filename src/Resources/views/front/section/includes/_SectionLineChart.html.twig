@@ -1,7 +1,7 @@
 {% block content %}
     <div class="canvas-container">
         <div class="position-relative">
-            <canvas id="{{ section.title|lower|replace({' ': "-"}) }}" width="400" height="400"></canvas>
+            <canvas id="{{ section.title|lower|replace({' ': "-", '\'': '-'}) }}" width="400" height="400"></canvas>
         </div>
         <legend>{{ section.legend|raw }}</legend>
     </div>
