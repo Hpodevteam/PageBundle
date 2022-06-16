@@ -160,6 +160,6 @@ class BarChartYRow
      */
     public function __toString(): string
     {
-        return 'Ligne #' . ($this->position + 1);
+        return $this->label;
     }
 }

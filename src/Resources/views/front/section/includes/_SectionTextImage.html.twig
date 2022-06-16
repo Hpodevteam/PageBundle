@@ -2,24 +2,26 @@
     <div class="row">
         {% if section.floatMode %}
             <div class="col-12">
-                <img
-                        src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}"
-                        alt="{{ section.image.imageName }}"
-                        width="100%"
-                        class="{% if section.imageToLeft %}float-left{% else %}float-right{% endif %}"
-                >
+                {% if section.image %}
+                    <img
+                            src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}"
+                            alt="{{ section.image.imageName }}"
+                            width="100%"
+                            class="{% if section.imageToLeft %}float-left{% else %}float-right{% endif %}"
+                    >
+                {% endif %}
                 {{ section.content|raw }}
             </div>
         {% else %}
             <div class="col-12 col-sm-6">
-                {% if section.imageToLeft %}
+                {% if section.imageToLeft and section.image %}
                     <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" width="100%">
                 {% else %}
                     {{ section.content|raw }}
                 {% endif %}
             </div>
             <div class="col-12 col-sm-6">
-                {% if section.imageToLeft %}
+                {% if section.imageToLeft and section.image %}
                     {{ section.content|raw }}
                 {% else %}
                     <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" width="100%">

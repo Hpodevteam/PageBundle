@@ -3,6 +3,7 @@
 namespace Hippocampe\Bundle\PageBundle\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use Hippocampe\Bundle\PageBundle\Entity\SectionTable;
 use Hippocampe\Bundle\PageBundle\Form\Admin\Type\Table\RowType;
 
@@ -20,7 +21,8 @@ class SectionTableCrudController extends AbstractSectionCrudController
                 ->allowAdd()
                 ->allowDelete()
                 ->setEntryIsComplex(true)
-                ->setEntryType(RowType::class)
+                ->setEntryType(RowType::class),
+            TextEditorField::new('legend', 'Légende')
         ]);
     }
 }

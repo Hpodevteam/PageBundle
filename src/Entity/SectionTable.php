@@ -22,10 +22,17 @@ class SectionTable extends Section
      */
     private $rows;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $legend;
+
     public function __construct()
     {
         $this->rows = new ArrayCollection();
         $this->setEnabled(true);
+
+        $this->setBackgroundColor('#ffffff');
     }
 
     /**
@@ -53,6 +60,26 @@ class SectionTable extends Section
     public function removeRow(Row $row): self
     {
         $this->rows->removeElement($row);
+
+        return $this;
+    }
+
+    /**
+    * @return string|null
+    */
+    public function getLegend(): ?string
+    {
+        return $this->legend;
+    }
+
+    /**
+     * @param string|null $legend
+     *
+     * @return $this
+     */
+    public function setLegend(?string $legend): self
+    {
+        $this->legend = $legend;
 
         return $this;
     }

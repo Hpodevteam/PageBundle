@@ -2,7 +2,7 @@
 
 {% block page_actions %}
     {% if isChart(edit_form.vars.value) %}
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chartModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chartModal">
             Aperçu du graphique
         </button>
     {% endif %}
@@ -30,8 +30,8 @@
     {% endblock edit_form %}
 
     {% if isChart(edit_form.vars.value) %}
-        <div class="modal fade" id="chartModal" tabindex="-1" role="dialog" aria-labelledby="chartModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal fade" id="chartModal" tabindex="-1" aria-labelledby="chartModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="chartModalLabel">Aperçu du graphique</h5>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                     </div>
                 </div>
             </div>

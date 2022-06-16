@@ -1,7 +1,9 @@
 {% block content %}
     <div class="row">
         <div class="col-12">
-            <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" class="mw-100">
+            {% if section.image %}
+                <img src="{{ asset('uploads/section_image/' ~ section.image.imageName) }}" alt="{{ section.image.imageName }}" class="mw-100">
+            {% endif %}
             <legend>{{ section.legend|raw }}</legend>
         </div>
     </div>
