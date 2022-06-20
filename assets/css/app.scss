@@ -26,3 +26,19 @@
   border-radius: 30px;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.page-bundle-margin-small {
+  margin: 2rem 0;
+}
+
+.page-bundle-margin-standard {
+  margin: 4rem 0;
+}
+
+.page-bundle-margin-top {
+  margin-top: 4rem;
+}
+
+.page-bundle-margin-bottom {
+  margin-bottom: 4rem;
+}

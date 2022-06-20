@@ -97,7 +97,7 @@
                     });
                 })
 
-                BarChart.draw(ctx, labels, datasets, "", true, "y");
+                BarChart.draw(ctx, labels, datasets, "{{ section.label }}", false, "y");
             {% endif %}
 
             {% if section.className == 'SectionLineChart' %}

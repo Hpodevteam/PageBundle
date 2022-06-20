@@ -7,11 +7,11 @@ class SectionStyleTypeEnum
 {
     use Enum;
 
-    const TYPE_NONE     = 'none';
-    const TYPE_SMALL    = 'my-2';
-    const TYPE_NORMAL   = 'my-3';
-    const TYPE_TOP      = 'mt-4';
-    const TYPE_BOTTOM   = 'mb-4';
+    const TYPE_NONE     = 'my-0';
+    const TYPE_SMALL    = 'page-bundle-margin-small';
+    const TYPE_NORMAL   = 'page-bundle-margin-standard';
+    const TYPE_TOP      = 'page-bundle-margin-top';
+    const TYPE_BOTTOM   = 'page-bundle-margin-bottom';
 
     protected static array $typeName = [
         self::TYPE_NONE => 'Aucune marge',
