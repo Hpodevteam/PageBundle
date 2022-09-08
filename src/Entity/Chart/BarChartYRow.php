@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Hippocampe\Bundle\PageBundle\Entity\SectionBarChart;
+use Hippocampe\Bundle\PageBundle\Entity\SectionBarChartY;
 
 /**
  * @ORM\Entity(repositoryClass="Hippocampe\Bundle\PageBundle\Repository\Chart\BarChartYRowRepository")
@@ -24,7 +25,7 @@ class BarChartYRow
      * @ORM\ManyToOne(targetEntity="Hippocampe\Bundle\PageBundle\Entity\SectionBarChartY", inversedBy="barChartRows")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
-    private ?SectionBarChart $sectionBarChart;
+    private ?SectionBarChartY $sectionBarChart;
 
     /**
      * @Gedmo\SortablePosition

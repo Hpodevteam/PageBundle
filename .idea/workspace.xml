@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="844ed324-d78c-4b72-9704-5c65bbadef05" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Chart/BarChartRow.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chart/BarChartRow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Chart/BarChartYRow.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chart/BarChartYRow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Chart/LineChartRow.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chart/LineChartRow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Chart/PieChartRow.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chart/PieChartRow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/public/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/public/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Traits/SectionWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/SectionWidget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Traits/SectionWidgetTab.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/SectionWidgetTab.php" afterDir="false" />
-    </list>
+    <list default="true" id="844ed324-d78c-4b72-9704-5c65bbadef05" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,9 +24,15 @@
     <setting file="file://$PROJECT_DIR$/src/Controller/Admin/SectionBarChartYCrudController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controller/Admin/SectionTextCrudController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/DependencyInjection/PageBundleExtension.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Entity/Chart/BarChartRow.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Entity/Chart/BarChartYRow.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Entity/Chart/LineChartRow.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Entity/Chart/PieChartRow.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Entity/Section.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Entity/SectionBarChart.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Entity/SectionBarChartY.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Entity/SectionTable.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Entity/Table/Row.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Enum/SectionTypeEnum.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Form/Admin/Type/Chart/BarChartRowType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Form/Admin/Type/Chart/BarChartYRowType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -46,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/src/Resources/views/front/includes/_chart_builder.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/views/front/section/includes/_SectionBarChart.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/views/front/section/includes/_SectionPieChart.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Traits/SectionWidgetTab.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Twig/PageBundleTwigExtension.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle/src/DependencyInjection/FOSCKEditorExtension.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle/src/FOSCKEditorBundle.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -146,16 +143,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/florian/websites/html/leem_bde",
-    "nodejs_package_manager_path": "yarn",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/florian/websites/html/leem_bde&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
