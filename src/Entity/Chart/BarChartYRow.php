@@ -5,7 +5,6 @@ namespace Hippocampe\Bundle\PageBundle\Entity\Chart;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Hippocampe\Bundle\PageBundle\Entity\SectionBarChart;
 use Hippocampe\Bundle\PageBundle\Entity\SectionBarChartY;
 
 /**
