@@ -25,6 +25,7 @@
         "symfony/webpack-encore-bundle": "^1.14",
         "symfony/twig-bundle": "^5.4",
         "symfony/console": "^5.4",
-        "vich/uploader-bundle": "^1.19"
+        "vich/uploader-bundle": "^1.19",
+        "friendsofsymfony/ckeditor-bundle": "2.4"
     }
 }
