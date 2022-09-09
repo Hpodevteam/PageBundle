@@ -21,10 +21,12 @@
     <setting file="file://$PROJECT_DIR$/assets/js/admin.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/assets/js/app.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/assets/js/charts/bar_chart.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/composer.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controller/Admin/AbstractSectionCrudController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controller/Admin/SectionBarChartYCrudController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controller/Admin/SectionTextCrudController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/DependencyInjection/Configuration.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/DependencyInjection/PageBundleExtension.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Entity/Chart/BarChartRow.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Entity/Chart/BarChartYRow.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -38,8 +40,10 @@
     <setting file="file://$PROJECT_DIR$/src/Enum/SectionTypeEnum.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Form/Admin/Type/Chart/BarChartRowType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Form/Admin/Type/Chart/BarChartYRowType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/PageBundle.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/config/fos_ck_editor.yaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/config/services.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Resources/config/vich_uploader.yaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/views/admin/section/edit.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/views/front/includes/_chart_builder.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Resources/views/front/section/includes/_SectionBarChart.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -175,7 +179,7 @@
       <workItem from="1655110970401" duration="184000" />
       <workItem from="1655283632328" duration="3416000" />
       <workItem from="1662715460294" duration="1618000" />
-      <workItem from="1662718269269" duration="937000" />
+      <workItem from="1662718269269" duration="3378000" />
     </task>
     <servers />
   </component>
