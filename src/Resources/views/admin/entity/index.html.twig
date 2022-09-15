@@ -1,4 +1,4 @@
-{% extends '@!EasyAdmin/crud/edit.html.twig' %}
+{% extends '@!EasyAdmin/crud/index.html.twig' %}
 
 {% block page_actions %}
     <form
@@ -23,13 +23,4 @@
     </form>
 
     {{ parent() }}
-{% endblock %}
-
-{% block edit_form %}
-    {{ parent() }}
-{% endblock edit_form %}
-
-{% block configured_javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('bundles/page/admin.js') }}"></script>
 {% endblock %}

@@ -17,7 +17,9 @@ class SectionTextCrudController extends AbstractSectionCrudController
     public function configureFields(string $pageName): iterable
     {
         return array_merge(parent::configureFields($pageName), [
-            TextEditorField::new('content', 'Contenu')->setFormType(CKEditorType::class)
+            TextEditorField::new('content', 'Contenu')
+                ->setFormType(CKEditorType::class)
+                ->setColumns(12)
         ]);
     }
 }

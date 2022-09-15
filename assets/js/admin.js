@@ -1,6 +1,5 @@
 import Sortable from 'sortablejs';
-//import 'select2';
-import '../css/app.scss';
+import '../css/admin.scss';
 
 import PieChart from "./charts/pie_chart";
 import BarChart from "./charts/bar_chart";
@@ -28,8 +27,13 @@ $(document).ready( function () {
         })
     }
 
-    /*$('.select2.data-select').select2({
-        tags: true,
-        width: '100%'
-    });*/
+    $(".page-file").on("click", function () {
+        const file = $(this).text();
+
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(`${window.location.hostname}/uploads/pages/files/${file}`).select();
+        document.execCommand("copy");
+        $temp.remove();
+    })
 })

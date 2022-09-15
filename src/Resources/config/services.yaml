@@ -7,6 +7,10 @@ services:
     resource: '../../Controller/Admin/*'
     tags: [ 'controller.service_arguments' ]
 
+  Hippocampe\Bundle\PageBundle\Controller\:
+    resource: '../../Controller/*'
+    tags: [ 'controller.service_arguments' ]
+
   Hippocampe\Bundle\PageBundle\Repository\:
     resource: '../../Repository/*'
     tags: [ 'doctrine.repository_service' ]

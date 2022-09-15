@@ -37,7 +37,8 @@ class PageBundleTwigExtension extends AbstractExtension
         return [
             new TwigFunction('getEntity', [$this, 'getEntity']),
             new TwigFunction('spacerValue', [$this, 'spacerValue']),
-            new TwigFunction('isChart', [$this, 'isChart'])
+            new TwigFunction('isChart', [$this, 'isChart']),
+            new TwigFunction('renderAvailableFiles', [$this, 'renderAvailableFiles'])
         ];
     }
 
@@ -68,5 +69,10 @@ class PageBundleTwigExtension extends AbstractExtension
         }
 
         return false;
+    }
+
+    public function renderAvailableFiles(): ?array
+    {
+        return scandir('uploads/pages/files');
     }
 }

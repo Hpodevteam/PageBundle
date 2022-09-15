@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=7.4",
-        "doctrine/annotations": "^1.0",
+        "doctrine/annotations": "^1.13",
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",

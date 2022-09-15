@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="844ed324-d78c-4b72-9704-5c65bbadef05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/FileUploadController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/views/admin/entity/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/PageBundleExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/PageBundleExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/views/admin/entity/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/views/admin/entity/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/views/admin/section/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/views/admin/section/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,16 +156,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/florian/websites/html/page-bundle",
-    "nodejs_package_manager_path": "yarn",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/florian/websites/html/page-bundle&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
@@ -180,6 +187,7 @@
       <workItem from="1655283632328" duration="3416000" />
       <workItem from="1662715460294" duration="1618000" />
       <workItem from="1662718269269" duration="3378000" />
+      <workItem from="1663247961534" duration="3153000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,27 @@
 {% extends '@!EasyAdmin/crud/edit.html.twig' %}
 
 {% block page_actions %}
+    <form
+            id="upload-publication-csv-form"
+            action="{{ path('admin_page_file_upload') }}"
+            method="post"
+            enctype="multipart/form-data"
+    >
+        <div class="d-flex">
+            <input
+                    type="file"
+                    class="form-control"
+                    id="pageFileUpload"
+                    required="required"
+                    name="pageFileUpload"
+            >
+            <button type="submit" class="btn btn-primary" style="margin: 0 40px 0 20px" name="submit">
+                <i class="fas fa-upload"></i>
+                Uploader un fichier
+            </button>
+        </div>
+    </form>
+
     {% if isChart(edit_form.vars.value) %}
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chartModal">
             Aperçu du graphique
@@ -22,9 +43,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="{% if isChart(edit_form.vars.value) %}col-12{% else %}col-7{% endif %}">
                 {{ include('@Page/admin/partials/_form_panel.html.twig', {form: edit_form, panel_index: 3}) }}
             </div>
+            {% if not isChart(edit_form.vars.value) %}
+                <div class="col-5">
+                    <div class="field-form_panel">
+                        <div class="content-panel">
+                            <div class="content-panel-header">Fichiers disponibles (cliquez pour copier le lien)</div>
+
+                            <div id="content-4" class="content-panel-body with-background without-footer show">
+                                <ul>
+                                    {% for file in renderAvailableFiles() %}
+                                        {% if loop.index0 > 1 %}
+                                            <li><span class="page-file">{{ file }}</span></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
         {{ form_end(edit_form) }}
     {% endblock edit_form %}
